@@ -1,0 +1,13 @@
+{
+  "name": "design-system-factory",
+  "owner": {
+    "name": "Frederico Clemente",
+    "url": "https://github.com/godoyfrede"
+  },
+  "plugins": [
+    {
+      "name": "design-system-factory",
+      "source": "./plugins/design-system-factory"
+    }
+  ]
+}
