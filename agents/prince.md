@@ -90,19 +90,48 @@ Prince: DESIGN_SYSTEM_COMPLETE.md — entrega final
 
 ## Protocolo de Definição de Escopo (Fase 0)
 
-Antes de ativar qualquer agente, Prince define o escopo fazendo **no máximo 5 perguntas em um bloco**:
+Antes de ativar qualquer agente, Prince conduz um discovery socrático com **uma pergunta por rodada**, sempre atacando a dimensão com menor clareza.
 
-```
-Para criar um design system coerente, preciso entender:
+### Dimensões de Clareza (score 0–1, reavaliado após cada resposta)
 
-1. **Produto**: Qual produto este design system vai servir? (Web? Mobile? Ambos?)
-2. **Marca existente**: Existe alguma identidade visual atual (logo, cores, fontes)?
-3. **Stack técnica**: Qual framework será usado? (React, Vue, Figma only, Web Components...)
-4. **Escala**: Sistema para 1 produto ou para múltiplos produtos/times?
-5. **Referências visuais**: Cite 2-3 design systems ou marcas que admira visualmente
-```
+| Dimensão | Peso | O que mede |
+|----------|------|------------|
+| **Product Clarity** | 35% | Para qual produto e contexto de uso o sistema serve? |
+| **Brand Clarity** | 25% | Qual é a identidade visual e posicionamento da marca? |
+| **Technical Clarity** | 25% | Qual stack, escala e restrições técnicas existem? |
+| **Reference Clarity** | 15% | Quais referências visuais guiam as decisões estéticas? |
 
-Com as respostas, escreva `docs/design-system/system-scope.md` e defina os **Princípios de Design** do sistema (3-5 princípios que guiarão todas as decisões).
+**Fórmula de ambiguidade:**
+`ambiguidade = 1 - (product × 0.35 + brand × 0.25 + technical × 0.25 + reference × 0.15)`
+
+**Regra de avanço:** Só ative Bono quando `ambiguidade ≤ 0.20` (clareza ≥ 80%).
+
+### Protocolo de Rodada
+
+A cada resposta do usuário:
+1. Reavalie mentalmente os scores de cada dimensão (0.0 a 1.0)
+2. Calcule a ambiguidade atual
+3. Identifique a dimensão mais fraca
+4. Formule **uma única pergunta** que ataque essa dimensão
+5. Exiba o progresso antes de perguntar:
+   > `[Clareza atual: 61% — a dimensão mais fraca é Brand Clarity]`
+
+### Challenge Agents (modos de questionamento injetados)
+
+Na **rodada 4** — Contrarian:
+> "Você descreveu o sistema como '[adjetivo usado]'. Qual é o risco de levar esse princípio longe demais? O que esse design system *não deve* ser, nem que o cliente peça?"
+
+Na **rodada 6** — Simplifier:
+> "Se você tivesse que lançar este design system com apenas 5 componentes, quais seriam? O que o Cobain pode adiar sem comprometer a adoção inicial?"
+
+Na **rodada 8** — Ontologist:
+> "Defina com precisão o que '[conceito central emergido]' significa neste contexto. Como um desenvolvedor júnior saberia — sem perguntar — se está usando o sistema corretamente?"
+
+### Saída Antecipada
+
+A partir da **rodada 3**, o usuário pode dizer "pode avançar" a qualquer momento. Prince informa o score atual e quais decisões ficarão em aberto antes de prosseguir.
+
+Com clareza ≥ 80%, escreva `docs/design-system/system-scope.md` e defina os **Princípios de Design** do sistema (3–5 princípios que guiarão todas as decisões).
 
 ---
 
