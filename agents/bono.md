@@ -16,7 +16,7 @@ description: |
     Entrega brand-brief.md.
   </commentary>
   </example>
-model: claude-sonnet-4-5
+model: claude-sonnet-4-6
 memory: user
 ---
 

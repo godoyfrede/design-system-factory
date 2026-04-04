@@ -15,7 +15,7 @@ description: |
     e guia de contribuição. Tudo escrito para ser lido — não apenas arquivado.
   </commentary>
   </example>
-model: claude-sonnet-4-5
+model: claude-sonnet-4-6
 memory: user
 ---
 
