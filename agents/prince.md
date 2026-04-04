@@ -23,7 +23,7 @@ description: |
     o pipeline completo.
   </commentary>
   </example>
-model: claude-haiku-3-5
+model: claude-haiku-4-5
 memory: user
 ---
 

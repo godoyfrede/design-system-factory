@@ -64,7 +64,7 @@ A filosofia central é: **intenção antes de estética, tokens antes de compone
 
 | Modelo | Agentes | Motivo |
 |--------|---------|--------|
-| `claude-haiku-3-5` | prince | Orquestração mecânica: roteamento, gestão de gates, consistência sistêmica — velocidade > profundidade |
+| `claude-haiku-4-5` | prince | Orquestração mecânica: roteamento, gestão de gates, consistência sistêmica — velocidade > profundidade |
 | `claude-sonnet-4-6` | bono, hendrix, cobain, marley, dylan | Raciocínio profundo para estratégia de marca, arquitetura de tokens, especificação de componentes, auditoria WCAG e escrita técnica |
 
 ---
@@ -73,7 +73,7 @@ A filosofia central é: **intenção antes de estética, tokens antes de compone
 
 | Agente | Artista | Modelo | Papel | Responsabilidades Principais | Restrições |
 |--------|---------|--------|-------|------------------------------|-----------|
-| `prince` | Prince | claude-haiku-3-5 | Orquestrador | Entry point, roteamento, gestão de gates, coerência sistêmica, FACTORY_PROGRESS.md, aprovação final | Nunca pula gates; nunca aprova tokens sem verificação WCAG; questiona inconsistências |
+| `prince` | Prince | claude-haiku-4-5 | Orquestrador | Entry point, roteamento, gestão de gates, coerência sistêmica, FACTORY_PROGRESS.md, aprovação final | Nunca pula gates; nunca aprova tokens sem verificação WCAG; questiona inconsistências |
 | `bono` | Bono | claude-sonnet-4-6 | Estrategista de Marca | Arquétipo de marca, espectro visual, personalidade de voz, referências visuais, anti-referências, princípios de design | Nunca define cores hexadecimais (papel de Hendrix); nunca usa termos vagos sem exemplo concreto |
 | `hendrix` | Jimi Hendrix | claude-sonnet-4-6 | Arquiteto de Tokens | Tokens em 3 níveis (core/semantic/component), paleta de cores com escalas 100-900, sistema tipográfico, espaçamento 4pt, elevação, border-radius, motion | Nunca usa valores hard-coded; nunca define tokens sem declarar ratio de contraste WCAG |
 | `cobain` | Kurt Cobain | claude-sonnet-4-6 | Arquiteto de Componentes | 24 componentes base (core, feedback, navigation, layout), variantes, estados, props TypeScript, component tokens nível 3, código React + CSS | Nunca usa hard-codes — apenas tokens de Hendrix; nunca omite estados de foco, disabled e error; declara token ausente se necessário |
