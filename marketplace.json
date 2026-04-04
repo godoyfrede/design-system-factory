@@ -1,0 +1,48 @@
+{
+  "name": "design-system-factory",
+  "displayName": "Design System Factory",
+  "version": "1.0.0",
+  "description": "Pipeline multi-agente para criar design systems completos. 6 agentes especializados: estratégia de marca, tokens, componentes, acessibilidade e documentação. Da identidade visual ao component library pronto para produção.",
+  "author": "Frederico Clemente",
+  "repository": "https://github.com/godoyfrede/design-system-factory",
+  "license": "MIT",
+  "agents": [
+    {
+      "name": "prince",
+      "displayName": "Prince — Orquestrador",
+      "description": "Guardião da coerência sistêmica. Entry point do pipeline. Roteia e mantém consistência entre fases."
+    },
+    {
+      "name": "bono",
+      "displayName": "Bono — Estrategista de Marca",
+      "description": "Transforma valores de produto em direção visual. Define arquétipo, espectro visual e princípios de design."
+    },
+    {
+      "name": "hendrix",
+      "displayName": "Hendrix — Arquiteto de Tokens",
+      "description": "Cria sistema de tokens em 3 níveis: core, semantic e component. Verifica WCAG automaticamente."
+    },
+    {
+      "name": "cobain",
+      "displayName": "Cobain — Arquiteto de Componentes",
+      "description": "Especifica componentes completos: variantes, estados, props, tokens e código de referência."
+    },
+    {
+      "name": "marley",
+      "displayName": "Marley — Auditor de Acessibilidade",
+      "description": "Audita WCAG 2.1 AA, keyboard navigation e screen reader behavior. Classifica por severidade."
+    },
+    {
+      "name": "dylan",
+      "displayName": "Dylan — Escritor de Documentação",
+      "description": "Cria documentação que desenvolvedores realmente leem: getting started, component guides e contributing."
+    }
+  ],
+  "skills": [
+    {
+      "name": "design-system",
+      "displayName": "Design System — Pipeline Completo",
+      "description": "Ativa o pipeline completo: da estratégia de marca ao design system documentado e acessível."
+    }
+  ]
+}

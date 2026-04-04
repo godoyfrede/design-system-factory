@@ -1,0 +1,13 @@
+{
+  "name": "design-system-factory",
+  "version": "1.0.0",
+  "description": "Design System Factory — 5 agentes especializados em criar design systems completos: tokens, componentes, acessibilidade e documentação. Da identidade de marca ao component library pronto para produção.",
+  "author": {
+    "name": "Frederico Clemente",
+    "url": "https://github.com/godoyfrede"
+  },
+  "repository": "https://github.com/godoyfrede/design-system-factory",
+  "homepage": "https://github.com/godoyfrede/design-system-factory",
+  "license": "MIT",
+  "keywords": ["design-system", "tokens", "components", "accessibility", "multi-agent", "ui"]
+}

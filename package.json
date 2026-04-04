@@ -1,0 +1,8 @@
+{
+  "name": "design-system-factory",
+  "version": "1.0.0",
+  "description": "Design System Factory — Pipeline multi-agente para criar design systems completos: da identidade visual ao component library",
+  "type": "module",
+  "keywords": ["claude-plugin", "design-system", "tokens", "components", "accessibility"],
+  "license": "MIT"
+}
