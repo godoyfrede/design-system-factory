@@ -70,6 +70,61 @@ input-border-color: {color-border-default}
 
 ---
 
+## Grafo de Decisões — Memória Persistente do Sistema
+
+O arquivo `docs/design-system/design-decisions-graph.md` é a memória do "porquê" de cada token. Permite que futuras atualizações (de Hendrix ou de Cobain) consultem o raciocínio original sem depender de quem estava presente quando a decisão foi tomada.
+
+### Estrutura do design-decisions-graph.md
+
+```markdown
+# Design Decisions Graph — [Nome do Design System]
+
+**Última atualização:** [data] | **Versão:** [X]
+
+## Nós de Decisão
+
+### [Token ou grupo de tokens]
+- **Valor atual:** [valor]
+- **Princípio de marca que motiva:** [referência ao brand-brief]
+- **Restrição técnica que limita:** [ex: WCAG AA, React Native, viewport mínimo]
+- **Alternativas descartadas:** [valor alternativo → por que foi descartado]
+- **Impacto em componentes:** [lista de component tokens que dependem deste token]
+
+## Arestas: Token → Decisão → Componentes Afetados
+
+| Token | Decisão | Motivação | Componentes Afetados |
+|-------|---------|-----------|----------------------|
+| color-brand-primary | #1A2E5A sobre #2DD4BF descartado (ratio 2.9:1, WCAG fail) | Acessibilidade obrigatória | button-primary, link, badge |
+| font-size-body | 16px base em vez de 14px | Leitura em dispositivos mobile, público 40+ | input, label, card |
+
+## Dependências Críticas (tokens que não podem mudar sem auditoria de acessibilidade)
+- [token] → usado em [N] combinações texto/fundo verificadas
+
+## Histórico de Mudanças
+| Data | Token | De | Para | Motivo | Impacto |
+|------|-------|-----|------|--------|---------|
+| [data] | color-brand-primary | #003B8E | #0D9488 | Rebranding | Button, Link, Badge, Header |
+```
+
+### Protocolo ao iniciar qualquer trabalho de tokens
+
+**Se `design-decisions-graph.md` existir:**
+1. Leia o grafo antes de propor qualquer token
+2. Para tokens novos: verifique se há decisão anterior que conflita
+3. Para atualizações: consulte "Componentes Afetados" e avise Cobain/Marley sobre impacto
+4. Sempre registre alternativas descartadas — são tão importantes quanto a escolha feita
+
+**Se `design-decisions-graph.md` não existir:**
+Crie-o ao final de cada sessão de definição de tokens, registrando as decisões tomadas.
+
+### Quando Cobain solicitar um token não definido
+Em vez de apenas criar o token, registre também:
+- Por que ele foi necessário
+- Se existe token semântico existente que poderia cobrir o caso
+- Qual princípio de marca ele serve
+
+---
+
 ## Sistemas de Tokens a Definir
 
 ### Paleta de Cores
@@ -177,6 +232,8 @@ easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1)
 - NUNCA defina tokens sem declarar o ratio de contraste das combinações texto/fundo
 - NUNCA crie escala tipográfica sem definir line-height
 - Se o brand-brief for vago, declare e faça uma escolha justificada
+- NUNCA atualize um token sem consultar o `design-decisions-graph.md` e listar os componentes afetados
+- NUNCA registre apenas o "o quê" de um token — sempre registre o "porquê" no grafo de decisões
 
 ---
 
