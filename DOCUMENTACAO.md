@@ -269,7 +269,7 @@ Em cada gate, Prince verifica:
 - Define INTENÇÃO, não implementação — cores conceituais, não hexadecimais
 - Nunca usa termos vagos sem exemplo concreto ("moderno" precisa de referência)
 - Toda decisão justificada com base no produto e no usuário, não em preferência pessoal
-- Usa personas do UX Research Lab quando disponível — pesquisa informa estratégia
+- Usa dados de pesquisa de usuário quando disponível — pesquisa informa estratégia
 
 **O sistema de Bono:**
 - Arquétipo primário + tensão criativa (12 arquétipos de Jung)
@@ -624,43 +624,33 @@ O gate de acessibilidade é o único bloqueante do pipeline. Se Marley encontrar
 
 ## 9. Integração com Outros Times
 
-### ← UX Research Lab
+O Design System Factory é projetado para integrar com os demais processos do seu fluxo de produto.
 
-**Quando usar esta integração:**
-Antes de Bono definir o brand-brief. As personas sintéticas de Mercury informam a direção de marca.
+### ← Pesquisa de Usuário (Entrada)
 
-**Fluxo de handoff:**
-```
-Mercury (UX Research Lab) → personas-overview.md → Bono (Design System Factory)
-Vedder (UX Research Lab) → insight-report.md → Bono (Design System Factory)
-```
+**Quando usar:**
+Antes de Bono definir o brand-brief. Dados de personas e insights de usuário informam a direção de marca.
 
 **O que Bono faz com esses dados:**
 - Motivações emocionais das personas → arquétipo de marca e espectro visual
-- Linguagem nativa (de Joplin via personas) → vocabulário da voz da marca
+- Linguagem nativa dos usuários → vocabulário da voz da marca
 - Workarounds identificados → princípios de design ("o sistema deve ser tão claro que workarounds não sejam necessários")
 
-### → Sgt. Peppers AI Band
+**Formatos aceitos:** `personas-overview.md`, `insight-report.md`, ou qualquer briefing de pesquisa com perfis de usuário e insights.
 
-**Quando usar esta integração:**
-Quando Paul (Frontend Specialist do Sgt. Peppers) implementa a UI de um produto.
+### → Desenvolvimento (Saída)
 
-**Fluxo de handoff:**
-```
-Hendrix (Design System Factory) → tokens.json → Paul (Sgt. Peppers / Frontend)
-Cobain (Design System Factory) → components/*.md → Paul (Sgt. Peppers / Frontend)
-Dylan (Design System Factory) → docs/getting-started.md → Paul (Sgt. Peppers / Frontend)
-```
+**Quando usar:**
+Quando o time de desenvolvimento implementa a UI do produto.
 
-**O que Paul faz com esses dados:**
-- Importa `tokens.json` como CSS Custom Properties
-- Usa os componentes especificados por Cobain como base
-- Segue os anti-padrões de Dylan para não usar os componentes incorretamente
-- Usa o brand-brief de Bono como referência para a Direção Estética
+**Artefatos entregues:**
+- `tokens.json` — design tokens prontos para importação como CSS Custom Properties
+- `components/*.md` — specs de componentes com variantes, estados e código de referência
+- `docs/getting-started.md` — guia de onboarding para desenvolvedores
 
 ### Comunicação cross-team
 
-Prince (Design System Factory) e George Martin (Sgt. Peppers AI Band) são os pontos de contato para handoffs complexos. A comunicação preferencial é sempre através dos artefatos escritos.
+Prince é o ponto de contato para handoffs complexos. A comunicação preferencial é sempre através dos artefatos escritos em `docs/design-system/`.
 
 ---
 
@@ -763,11 +753,10 @@ Prince (Design System Factory) e George Martin (Sgt. Peppers AI Band) são os po
 
                ↓ HANDOFFS DE ENTRADA        ↓ HANDOFFS DE SAÍDA
     ┌──────────────────────┐      ┌──────────────────────────┐
-    │   UX Research Lab    │      │   Sgt. Peppers AI Band   │
-    │  Mercury → Bono      │      │   Hendrix → Paul         │
-    │  (personas-overview) │      │   (tokens.json)          │
-    │  Vedder → Bono       │      │   Cobain → Paul          │
-    │  (insight-report)    │      │   (components/*.md)      │
+    │  Pesquisa de Usuário │      │     Desenvolvimento      │
+    │  personas-overview   │      │   Hendrix → tokens.json  │
+    │  insight-report      │      │   Cobain → components/   │
+    │       → Bono         │      │   Dylan  → docs/         │
     └──────────────────────┘      └──────────────────────────┘
 ```
 
@@ -784,11 +773,11 @@ R: Cobain declara explicitamente: "⚠️ Token ausente: [nome]. Solicito a Hend
 **P: O gate de acessibilidade realmente bloqueia o pipeline?**
 R: Sim, é o único gate bloqueante. Issues 🔴 CRÍTICO significam que usuários com deficiência são excluídos do produto. Isso não é negociável — o pipeline não avança até Cobain corrigir e Marley re-auditar.
 
-**P: Como o Design System Factory se integra com o Sgt. Peppers AI Band?**
-R: Hendrix entrega `tokens.json` e Cobain entrega as specs de `components/`. Paul (Frontend Specialist do Sgt. Peppers) usa esses artefatos como base para implementação — garantindo que o produto final use o design system corretamente.
+**P: Como o Design System Factory se integra com o time de desenvolvimento?**
+R: Hendrix entrega `tokens.json` e Cobain entrega as specs de `components/`. O time de desenvolvimento usa esses artefatos como base para implementação — garantindo que o produto final use o design system corretamente.
 
-**P: Posso usar o Design System Factory sem ter feito pesquisa no UX Research Lab?**
-R: Sim. Bono tem perguntas próprias para entender o produto e o público. A integração com o UX Research Lab enriquece o brand-brief com dados reais, mas não é obrigatória.
+**P: Posso usar o Design System Factory sem ter feito pesquisa de usuário?**
+R: Sim. Bono tem perguntas próprias para entender o produto e o público. Dados de pesquisa enriquecem o brand-brief, mas não são obrigatórios.
 
 **P: Quantos componentes o sistema cobre?**
 R: 24 componentes organizados em 4 categorias: Core (8), Feedback (5), Navigation (5) e Layout (6). Cobain também especifica como criar componentes adicionais — Dylan documenta isso no contributing guide.
